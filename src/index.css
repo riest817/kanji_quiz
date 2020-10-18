@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background: #C0C0C0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +11,62 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+  padding: 0.5em;/*文字周りの余白*/
+  color: #010101;/*文字色*/
+  background: #FFC0CB;/*背景色*/
+  border-bottom: solid 3px #516ab6;/*下線*/
+}
+
+.main {
+  background: #ffffff;
+  width: 300px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #cccccc;
+  margin: 30px auto;
+}
+
+.question {
+  background: #ffffff;
+  width: 280px;
+  padding: 10px;
+  font-size: 50px;
+  text-align: center;
+  border: 1px solid #cccccc;
+  margin: 30px auto;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+
+.answer {
+  background: #ffffff;
+  width: 280px;
+  padding: 10px;
+  font-size: 50px;
+  text-align: center;
+  border: 1px solid #cccccc;
+  margin: 30px auto;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+
+.button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #990000;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #990000;    /* 枠の指定 */
+}
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #990000;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
 }
