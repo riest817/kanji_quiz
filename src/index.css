@@ -22,7 +22,7 @@ h1 {
 
 .main {
   background: #ffffff;
-  width: 300px;
+  width: 400px;
   padding: 10px;
   text-align: center;
   border: 1px solid #cccccc;
@@ -31,8 +31,7 @@ h1 {
 
 .question {
   background: #ffffff;
-  width: 280px;
-  height : 300px;
+  width: 380px;
   padding: 10px;
   font-size: 80px;
   text-align: center;
@@ -42,7 +41,6 @@ h1 {
 
 .answer {
   background: #ffffff;
-  width: 280px;
   padding: 10px;
   font-size: 50px;
   text-align: center;
@@ -69,10 +67,9 @@ input {
   font-size     : 18pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
-  padding       : 12px 12px;   /* 余白       */
   background    : #990000;     /* 背景色     */
   color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
+
   transition    : .3s;         /* なめらか変化 */
   box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
   border        : 2px solid #990000;    /* 枠の指定 */

@@ -65,19 +65,22 @@ class Counter extends Component
   handleOnNext(event) {
     event.preventDefault()
     this.setState({isAnswered: false})
+    this.getData();
   }
 
   handleOnBack(event) {
     event.preventDefault()
-    this.setState({isAnswered: false})
+    this.setState({
+      isAnswered: false,
+      value: ""
+    })
   }
 
   getData(event) {
       axios.get(server)
       .then((res) => {
         this.setState({
-          status: true,
-          //result: res.data,
+          value: "",
           kanji : res.data.kanji,
           answer : res.data.yomi
         });
@@ -106,9 +109,9 @@ class Counter extends Component
           </label>
         </div>
         <div class="answer">
-          <form onSubmit={this.handleSubmit}>
-            <input type="submit" value="送信する" class="button"/>
-          </form>
+        <button onClick={this.handleSubmit} type="submit" class="button">
+            送信する
+        </button>
         </div>
         {this.state.isAnswered && <Dialog isCorrect={this.state.isCorrect} onBack={this.handleOnBack} onNext={this.handleOnNext}/> }
       </div>
