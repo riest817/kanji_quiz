@@ -32,11 +32,11 @@ h1 {
 .question {
   background: #ffffff;
   width: 280px;
+  height : 300px;
   padding: 10px;
-  font-size: 50px;
+  font-size: 80px;
   text-align: center;
   border: 1px solid #cccccc;
-  margin: 30px auto;
   font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
 
@@ -46,9 +46,21 @@ h1 {
   padding: 10px;
   font-size: 50px;
   text-align: center;
-  border: 1px solid #cccccc;
-  margin: 30px auto;
   font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+
+input[type="text"],
+input {
+    padding: 0.8em;
+    outline: none;
+    border: 1px solid #DDD;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 25px;
+    height : 10px;
+    width: 240px;
+    text-align: center;
 }
 
 .button {
@@ -69,4 +81,9 @@ h1 {
   box-shadow    : none;        /* カーソル時の影消去 */
   color         : #990000;     /* 背景色     */
   background    : #ffffff;     /* 文字色     */
+}
+
+h5 {
+  font-size: 20px;
+  text-align: left;
 }
