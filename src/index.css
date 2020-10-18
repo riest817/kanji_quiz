@@ -87,3 +87,48 @@ h5 {
   font-size: 20px;
   text-align: left;
 }
+
+.dialogHeader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  background-color: cyan;
+  width: 100%;
+  height: 40px;
+}
+
+.dialogContent {
+  position: relative; 
+}
+.nextButton {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+}
+.backButton {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.image {
+  object-fit: fill;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.dialogWrapper {
+  width: 640px;
+  height: 670px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}

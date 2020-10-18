@@ -7,6 +7,28 @@ const App = () => {
   return <Counter />
 }
 
+const CORRECT_IMAGE_PATH = `${process.env.PUBLIC_URL}/circle.png`;
+const MISS_IMAGE_PATH = `${process.env.PUBLIC_URL}/batsu.png`;
+
+const Dialog = ({ isCorrect, onNext, onBack} ) => {
+  return (
+    <div className="dialogWrapper">
+      <div className="dialogHeader">
+        {isCorrect ? '正解！' : '残念'}
+      </div>
+      <div className="dialogContent">
+        <img className="image" src={isCorrect ? CORRECT_IMAGE_PATH: MISS_IMAGE_PATH} alt='result'/>
+        {!isCorrect && <button　className="backButton"　onClick={onBack}>
+          {"やり直す"}
+        </button>}
+        <button　className="nextButton"　onClick={onNext}>
+          {"次の問題へ"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 class Counter extends Component
 {
   constructor(props)
@@ -22,20 +44,32 @@ class Counter extends Component
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getData = this.getData.bind(this);
     this.getData();
+    this.handleOnNext = this.handleOnNext.bind(this);
+    this.handleOnBack = this.handleOnBack.bind(this);
   }
 
   handleChange(event) { this.setState({value: event.target.value});  }
 
   handleSubmit(event) {
-    //this.setState({value: event.target.value});
+    event.preventDefault();
     console.log(this.state.answer);
     console.log(this.state.value);
     if ( this.state.answer === this.state.value ) {
-      alert("正解です！！");
+      this.setState({isCorrect: true})
     } else {
-      alert("間違いです。もう一度回答してみてください！");
-    } 
-    event.preventDefault();
+      this.setState({isCorrect: false})
+    }
+    this.setState({isAnswered: true});
+  }
+
+  handleOnNext(event) {
+    event.preventDefault()
+    this.setState({isAnswered: false})
+  }
+
+  handleOnBack(event) {
+    event.preventDefault()
+    this.setState({isAnswered: false})
   }
 
   getData(event) {
@@ -76,6 +110,7 @@ class Counter extends Component
             <input type="submit" value="送信する" class="button"/>
           </form>
         </div>
+        {this.state.isAnswered && <Dialog isCorrect={this.state.isCorrect} onBack={this.handleOnBack} onNext={this.handleOnNext}/> }
       </div>
     );
   }
