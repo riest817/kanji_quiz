@@ -51,7 +51,7 @@ class Counter extends Component
   handleChange(event) { this.setState({value: event.target.value});  }
 
   handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(); // 標準動作を
     console.log(this.state.answer);
     console.log(this.state.value);
     if ( this.state.answer === this.state.value ) {
